@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		50A1E3EC1BA3E45600F3A4DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E3EB1BA3E45600F3A4DB /* AppDelegate.swift */; };
-		50A1E3EE1BA3E45600F3A4DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E3ED1BA3E45600F3A4DB /* ViewController.swift */; };
 		50A1E3F11BA3E45600F3A4DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A1E3EF1BA3E45600F3A4DB /* Main.storyboard */; };
 		50A1E3F31BA3E45600F3A4DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A1E3F21BA3E45600F3A4DB /* Images.xcassets */; };
 		50A1E3F61BA3E45600F3A4DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A1E3F41BA3E45600F3A4DB /* LaunchScreen.xib */; };
@@ -25,6 +24,7 @@
 		50A1E41F1BA3E96000F3A4DB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4161BA3E96000F3A4DB /* StoreKit.framework */; };
 		50A1E4201BA3E96000F3A4DB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4171BA3E96000F3A4DB /* SystemConfiguration.framework */; };
 		50A1E4221BA3E96A00F3A4DB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4211BA3E96A00F3A4DB /* libsqlite3.dylib */; };
+		50A1E4241BA3ED3B00F3A4DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 		50A1E3E61BA3E45600F3A4DB /* room8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = room8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A1E3EA1BA3E45600F3A4DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50A1E3EB1BA3E45600F3A4DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50A1E3ED1BA3E45600F3A4DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50A1E3F01BA3E45600F3A4DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50A1E3F21BA3E45600F3A4DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		50A1E3F51BA3E45600F3A4DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		50A1E4161BA3E96000F3A4DB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		50A1E4171BA3E96000F3A4DB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		50A1E4211BA3E96A00F3A4DB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				50A1E3EB1BA3E45600F3A4DB /* AppDelegate.swift */,
-				50A1E3ED1BA3E45600F3A4DB /* ViewController.swift */,
+				50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */,
 				50A1E3EF1BA3E45600F3A4DB /* Main.storyboard */,
 				50A1E3F21BA3E45600F3A4DB /* Images.xcassets */,
 				50A1E3F41BA3E45600F3A4DB /* LaunchScreen.xib */,
@@ -260,7 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50A1E3EE1BA3E45600F3A4DB /* ViewController.swift in Sources */,
+				50A1E4241BA3ED3B00F3A4DB /* LoginViewController.swift in Sources */,
 				50A1E3EC1BA3E45600F3A4DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
