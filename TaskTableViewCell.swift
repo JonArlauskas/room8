@@ -1,5 +1,5 @@
 //
-//  ApartmentTableViewCell.swift
+//  TaskTableViewCell.swift
 //  room8
 //
 //  Created by Jonathan Arlauskas on 2015-09-12.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ApartmentTableViewCell: UITableViewCell {
+class TaskTableViewCell: UITableViewCell {
     
-    @IBOutlet var name: UILabel!
-
+    @IBOutlet var taskName: UILabel!
+    
 }

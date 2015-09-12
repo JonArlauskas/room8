@@ -27,6 +27,18 @@
 		50A1E4241BA3ED3B00F3A4DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */; };
 		50A1E4261BA40C4F00F3A4DB /* ApartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E4251BA40C4F00F3A4DB /* ApartmentTableViewController.swift */; };
 		50A1E4281BA42B4900F3A4DB /* ApartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E4271BA42B4900F3A4DB /* ApartmentTableViewCell.swift */; };
+		50F6CBDE1BA49847007018F5 /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBDD1BA49847007018F5 /* InventoryTableViewCell.swift */; };
+		50F6CBE01BA49854007018F5 /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBDF1BA49854007018F5 /* BillTableViewCell.swift */; };
+		50F6CBE21BA4985E007018F5 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBE11BA4985E007018F5 /* FoodTableViewCell.swift */; };
+		50F6CBE41BA498D8007018F5 /* InventoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBE31BA498D8007018F5 /* InventoryTableViewController.swift */; };
+		50F6CBE61BA498E2007018F5 /* BillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBE51BA498E2007018F5 /* BillTableViewController.swift */; };
+		50F6CBE81BA498E9007018F5 /* FoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBE71BA498E9007018F5 /* FoodTableViewController.swift */; };
+		50F6CBEE1BA4A811007018F5 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBED1BA4A811007018F5 /* TaskTableViewController.swift */; };
+		50F6CBF01BA4A823007018F5 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBEF1BA4A823007018F5 /* TaskTableViewCell.swift */; };
+		50F6CBF21BA4C81C007018F5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBF11BA4C81C007018F5 /* Task.swift */; };
+		50F6CBF41BA4C82E007018F5 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBF31BA4C82E007018F5 /* Inventory.swift */; };
+		50F6CBF61BA4C83A007018F5 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBF51BA4C83A007018F5 /* Bill.swift */; };
+		50F6CBF81BA4C842007018F5 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBF71BA4C842007018F5 /* Food.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +61,8 @@
 		50A1E3FB1BA3E45700F3A4DB /* room8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = room8Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A1E4001BA3E45700F3A4DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50A1E4011BA3E45700F3A4DB /* room8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = room8Tests.swift; sourceTree = "<group>"; };
-		50A1E40B1BA3E8C600F3A4DB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = room8/Bolts.framework; sourceTree = "<group>"; };
-		50A1E40C1BA3E8C600F3A4DB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = room8/Parse.framework; sourceTree = "<group>"; };
+		50A1E40B1BA3E8C600F3A4DB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		50A1E40C1BA3E8C600F3A4DB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		50A1E40F1BA3E96000F3A4DB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		50A1E4101BA3E96000F3A4DB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		50A1E4111BA3E96000F3A4DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,6 +76,18 @@
 		50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50A1E4251BA40C4F00F3A4DB /* ApartmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentTableViewController.swift; sourceTree = "<group>"; };
 		50A1E4271BA42B4900F3A4DB /* ApartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentTableViewCell.swift; sourceTree = "<group>"; };
+		50F6CBDD1BA49847007018F5 /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
+		50F6CBDF1BA49854007018F5 /* BillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
+		50F6CBE11BA4985E007018F5 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
+		50F6CBE31BA498D8007018F5 /* InventoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTableViewController.swift; sourceTree = "<group>"; };
+		50F6CBE51BA498E2007018F5 /* BillTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillTableViewController.swift; sourceTree = "<group>"; };
+		50F6CBE71BA498E9007018F5 /* FoodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTableViewController.swift; sourceTree = "<group>"; };
+		50F6CBED1BA4A811007018F5 /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
+		50F6CBEF1BA4A823007018F5 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskTableViewCell.swift; path = ../TaskTableViewCell.swift; sourceTree = "<group>"; };
+		50F6CBF11BA4C81C007018F5 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		50F6CBF31BA4C82E007018F5 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Inventory.swift; path = ../Inventory.swift; sourceTree = "<group>"; };
+		50F6CBF51BA4C83A007018F5 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bill.swift; path = ../Bill.swift; sourceTree = "<group>"; };
+		50F6CBF71BA4C842007018F5 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Food.swift; path = ../Food.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,18 +123,6 @@
 		50A1E3DD1BA3E45600F3A4DB = {
 			isa = PBXGroup;
 			children = (
-				50A1E4211BA3E96A00F3A4DB /* libsqlite3.dylib */,
-				50A1E40B1BA3E8C600F3A4DB /* Bolts.framework */,
-				50A1E40C1BA3E8C600F3A4DB /* Parse.framework */,
-				50A1E40F1BA3E96000F3A4DB /* AudioToolbox.framework */,
-				50A1E4101BA3E96000F3A4DB /* CFNetwork.framework */,
-				50A1E4111BA3E96000F3A4DB /* CoreGraphics.framework */,
-				50A1E4121BA3E96000F3A4DB /* CoreLocation.framework */,
-				50A1E4131BA3E96000F3A4DB /* libz.dylib */,
-				50A1E4141BA3E96000F3A4DB /* QuartzCore.framework */,
-				50A1E4151BA3E96000F3A4DB /* Security.framework */,
-				50A1E4161BA3E96000F3A4DB /* StoreKit.framework */,
-				50A1E4171BA3E96000F3A4DB /* SystemConfiguration.framework */,
 				50A1E3E81BA3E45600F3A4DB /* room8 */,
 				50A1E3FE1BA3E45700F3A4DB /* room8Tests */,
 				50A1E3E71BA3E45600F3A4DB /* Products */,
@@ -129,13 +141,14 @@
 		50A1E3E81BA3E45600F3A4DB /* room8 */ = {
 			isa = PBXGroup;
 			children = (
-				50A1E3EB1BA3E45600F3A4DB /* AppDelegate.swift */,
-				50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */,
 				50A1E3EF1BA3E45600F3A4DB /* Main.storyboard */,
-				50A1E4251BA40C4F00F3A4DB /* ApartmentTableViewController.swift */,
-				50A1E4271BA42B4900F3A4DB /* ApartmentTableViewCell.swift */,
-				50A1E3F21BA3E45600F3A4DB /* Images.xcassets */,
 				50A1E3F41BA3E45600F3A4DB /* LaunchScreen.xib */,
+				50F6CBDC1BA4981C007018F5 /* Views */,
+				50F6CBDA1BA497FB007018F5 /* Models */,
+				50F6CBD91BA497F5007018F5 /* Controllers */,
+				50F6CBD71BA497DB007018F5 /* Cells */,
+				50A1E3EB1BA3E45600F3A4DB /* AppDelegate.swift */,
+				50F6CBFB1BA4C869007018F5 /* Frameworks */,
 				50A1E3E91BA3E45600F3A4DB /* Supporting Files */,
 			);
 			path = room8;
@@ -144,6 +157,7 @@
 		50A1E3E91BA3E45600F3A4DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				50A1E3F21BA3E45600F3A4DB /* Images.xcassets */,
 				50A1E3EA1BA3E45600F3A4DB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -164,6 +178,68 @@
 				50A1E4001BA3E45700F3A4DB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50F6CBD71BA497DB007018F5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				50A1E4271BA42B4900F3A4DB /* ApartmentTableViewCell.swift */,
+				50F6CBDD1BA49847007018F5 /* InventoryTableViewCell.swift */,
+				50F6CBDF1BA49854007018F5 /* BillTableViewCell.swift */,
+				50F6CBE11BA4985E007018F5 /* FoodTableViewCell.swift */,
+				50F6CBEF1BA4A823007018F5 /* TaskTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		50F6CBD91BA497F5007018F5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */,
+				50A1E4251BA40C4F00F3A4DB /* ApartmentTableViewController.swift */,
+				50F6CBE31BA498D8007018F5 /* InventoryTableViewController.swift */,
+				50F6CBE51BA498E2007018F5 /* BillTableViewController.swift */,
+				50F6CBE71BA498E9007018F5 /* FoodTableViewController.swift */,
+				50F6CBED1BA4A811007018F5 /* TaskTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		50F6CBDA1BA497FB007018F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50F6CBF11BA4C81C007018F5 /* Task.swift */,
+				50F6CBF31BA4C82E007018F5 /* Inventory.swift */,
+				50F6CBF51BA4C83A007018F5 /* Bill.swift */,
+				50F6CBF71BA4C842007018F5 /* Food.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		50F6CBDC1BA4981C007018F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		50F6CBFB1BA4C869007018F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50A1E4211BA3E96A00F3A4DB /* libsqlite3.dylib */,
+				50A1E40B1BA3E8C600F3A4DB /* Bolts.framework */,
+				50A1E40C1BA3E8C600F3A4DB /* Parse.framework */,
+				50A1E40F1BA3E96000F3A4DB /* AudioToolbox.framework */,
+				50A1E4101BA3E96000F3A4DB /* CFNetwork.framework */,
+				50A1E4111BA3E96000F3A4DB /* CoreGraphics.framework */,
+				50A1E4121BA3E96000F3A4DB /* CoreLocation.framework */,
+				50A1E4131BA3E96000F3A4DB /* libz.dylib */,
+				50A1E4141BA3E96000F3A4DB /* QuartzCore.framework */,
+				50A1E4151BA3E96000F3A4DB /* Security.framework */,
+				50A1E4161BA3E96000F3A4DB /* StoreKit.framework */,
+				50A1E4171BA3E96000F3A4DB /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +343,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A1E4241BA3ED3B00F3A4DB /* LoginViewController.swift in Sources */,
+				50F6CBF61BA4C83A007018F5 /* Bill.swift in Sources */,
 				50A1E4261BA40C4F00F3A4DB /* ApartmentTableViewController.swift in Sources */,
+				50F6CBF41BA4C82E007018F5 /* Inventory.swift in Sources */,
+				50F6CBE41BA498D8007018F5 /* InventoryTableViewController.swift in Sources */,
+				50F6CBDE1BA49847007018F5 /* InventoryTableViewCell.swift in Sources */,
+				50F6CBE21BA4985E007018F5 /* FoodTableViewCell.swift in Sources */,
+				50F6CBEE1BA4A811007018F5 /* TaskTableViewController.swift in Sources */,
 				50A1E4281BA42B4900F3A4DB /* ApartmentTableViewCell.swift in Sources */,
+				50F6CBE01BA49854007018F5 /* BillTableViewCell.swift in Sources */,
+				50F6CBF21BA4C81C007018F5 /* Task.swift in Sources */,
+				50F6CBF01BA4A823007018F5 /* TaskTableViewCell.swift in Sources */,
+				50F6CBE81BA498E9007018F5 /* FoodTableViewController.swift in Sources */,
+				50F6CBF81BA4C842007018F5 /* Food.swift in Sources */,
+				50F6CBE61BA498E2007018F5 /* BillTableViewController.swift in Sources */,
 				50A1E3EC1BA3E45600F3A4DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

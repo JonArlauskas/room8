@@ -11,10 +11,17 @@ import Parse
 
 class LoginViewController: UIViewController {
 
+    //---------------------------------
+    // MARK: IB Outlets
+    //---------------------------------
     
     @IBOutlet var username: UITextField!
     
     @IBOutlet var password: UITextField!
+    
+    //---------------------------------
+    // MARK: Actions
+    //---------------------------------
     
     func displayAlert(title: String, message: String) {
         var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -38,11 +45,12 @@ class LoginViewController: UIViewController {
                 if results!.count == 0 {
                     if error == nil {
                         
-                        let user = PFUser()
+                        var user = PFUser()
                         
                         // Initialize variables for new user
                         user.username = self.username.text!
                         user.password = self.password.text!
+                        //user["aptList"] = []
                         
                         user.signUpInBackgroundWithBlock { (succeeded, error) -> Void in
                             if error == nil {
@@ -69,25 +77,25 @@ class LoginViewController: UIViewController {
         }
     }
  
+    //---------------------------------
+    // MARK: View delegate methods
+    //---------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         
-        PFUser.logOut()
+        //PFUser.logOut()
         
-        
-        
-        
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        if PFUser.currentUser() != nil {
+            
+            self.performSegueWithIdentifier("loggedIn", sender: self)
+            
+        }
+    }
     // Two functions to allow off keyboard touch to close keyboard
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
@@ -99,16 +107,5 @@ class LoginViewController: UIViewController {
         
         return true
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

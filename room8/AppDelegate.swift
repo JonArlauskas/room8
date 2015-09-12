@@ -13,6 +13,8 @@ import Bolts
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
+    // Icons : http://ic8.link/8034
     var window: UIWindow?
 
 

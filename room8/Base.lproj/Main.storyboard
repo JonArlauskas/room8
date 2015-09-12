@@ -29,6 +29,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhc-uT-Ub9">
                                 <rect key="frame" x="111" y="297" width="99" height="30"/>
                                 <state key="normal" title="Login/Signup">
+                                    <color key="titleColor" red="0.94901960784313721" green="0.93333333333333335" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -36,7 +37,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.0039215686274509803" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -47,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="508" y="261"/>
+            <point key="canvasLocation" x="-190" y="313"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nw6-bQ-liU">
@@ -64,7 +65,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmD-GT-E9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="907" y="261"/>
+            <point key="canvasLocation" x="209" y="313"/>
         </scene>
         <!--Apartment Table View Controller-->
         <scene sceneID="zr0-eD-ZC1">
@@ -74,6 +75,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.14901960780000001" green="0.0039215686269999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="apartment" rowHeight="71" id="ih2-9B-WnZ" customClass="ApartmentTableViewCell" customModule="room8" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -83,13 +86,16 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apartment Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dV-gf-0eo">
                                             <rect key="frame" x="8" y="8" width="136" height="42"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
+                                            <color key="textColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.0039215686269999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="name" destination="9dV-gf-0eo" id="KfE-Ij-9sI"/>
+                                    <segue destination="vgx-IJ-Vh9" kind="show" identifier="toTabs" id="mYD-By-KXm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -109,7 +115,288 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8r-Jw-X2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1326" y="261"/>
+            <point key="canvasLocation" x="628" y="313"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="AxZ-Vz-bF1">
+            <objects>
+                <tabBarController id="vgx-IJ-Vh9" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="FBa-dy-vhk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cYk-Gq-L80" kind="relationship" relationship="viewControllers" id="Dzg-gE-OXZ"/>
+                        <segue destination="seT-oO-uvh" kind="relationship" relationship="viewControllers" id="shZ-ZI-ubM"/>
+                        <segue destination="UuW-ct-WtU" kind="relationship" relationship="viewControllers" id="76o-Yu-hmK"/>
+                        <segue destination="MNk-dl-Oul" kind="relationship" relationship="viewControllers" id="D7B-Kc-wie"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spk-RU-4zU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="311"/>
+        </scene>
+        <!--Bills-->
+        <scene sceneID="Bm8-fO-k7W">
+            <objects>
+                <navigationController id="seT-oO-uvh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bills" image="Money Bag-32" selectedImage="Money Bag Filled-32" id="ISb-Ww-4CP"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sX6-sl-o40">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="KF4-0V-BIe" kind="relationship" relationship="rootViewController" id="Z01-8k-UYZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4TC-or-Zre" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1622" y="-45"/>
+        </scene>
+        <!--Bills-->
+        <scene sceneID="5DR-Qu-3zL">
+            <objects>
+                <tableViewController title="Bills" id="KF4-0V-BIe" customClass="BillTableViewController" customModule="room8" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Bc5-Ny-Raa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.14901960780000001" green="0.0039215686269999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bills" id="B0d-Mg-gTN" customClass="BillTableViewCell" customModule="room8" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B0d-Mg-gTN" id="bpI-wc-vfC">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLS-f6-9FO">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.0039215686269999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="billName" destination="dLS-f6-9FO" id="ZQP-43-H8n"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KF4-0V-BIe" id="aTH-YY-VQA"/>
+                            <outlet property="delegate" destination="KF4-0V-BIe" id="IUN-JB-xhl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="sEb-5y-s3S"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06V-c9-4BL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072" y="-45"/>
+        </scene>
+        <!--Food-->
+        <scene sceneID="QhZ-cy-9hl">
+            <objects>
+                <navigationController id="UuW-ct-WtU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Food" image="Pizza-32 (1)" selectedImage="Pizza-32" id="f16-TJ-eU0"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RUT-mX-EoP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ew0-sW-2gV" kind="relationship" relationship="rootViewController" id="Cfx-id-ZbU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FhT-IM-UUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1622" y="576"/>
+        </scene>
+        <!--Tasks-->
+        <scene sceneID="BKJ-0O-CXl">
+            <objects>
+                <navigationController title="Tasks" id="MNk-dl-Oul" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tasks" image="To Do-32" selectedImage="To Do Filled-32" id="xhd-lS-WTo"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kME-Of-hiQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kuu-mc-ODM" kind="relationship" relationship="rootViewController" id="IcE-zz-fJd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ka8-wh-MK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1622" y="1198"/>
+        </scene>
+        <!--Tasks-->
+        <scene sceneID="EgN-vJ-Sub">
+            <objects>
+                <tableViewController title="Tasks" id="kuu-mc-ODM" customClass="TaskTableViewController" customModule="room8" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="989-Bp-Gfv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.14901960780000001" green="0.0039215686269999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tasks" id="ZLk-xg-vzF" customClass="TaskTableViewCell" customModule="room8" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZLk-xg-vzF" id="VDz-CM-IUp">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4A-ct-9Qv">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.0039215686269999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="taskName" destination="v4A-ct-9Qv" id="W7c-wj-diG"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kuu-mc-ODM" id="FU5-In-Mnb"/>
+                            <outlet property="delegate" destination="kuu-mc-ODM" id="nGR-Ar-lTT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="U3u-kr-fzD">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="H4l-ut-CJS">
+                            <connections>
+                                <action selector="addTask:" destination="kuu-mc-ODM" id="LPn-Nx-P5m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxy-4X-jkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072" y="1198"/>
+        </scene>
+        <!--Food-->
+        <scene sceneID="Apn-zs-0gK">
+            <objects>
+                <tableViewController title="Food" id="ew0-sW-2gV" customClass="FoodTableViewController" customModule="room8" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="R15-sb-s1D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.14901960780000001" green="0.0039215686269999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="food" id="mXR-SV-Jsv" customClass="FoodTableViewCell" customModule="room8" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mXR-SV-Jsv" id="r9O-0J-ttl">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbj-4P-iag">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.0039215686269999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="foodName" destination="cbj-4P-iag" id="Urh-MK-4Ot"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ew0-sW-2gV" id="oW9-BU-Yaw"/>
+                            <outlet property="delegate" destination="ew0-sW-2gV" id="Z5l-wq-BM0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="okm-nF-2K0"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c1F-S7-h5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072" y="576"/>
+        </scene>
+        <!--Inventory-->
+        <scene sceneID="8Oc-dg-GPY">
+            <objects>
+                <navigationController id="cYk-Gq-L80" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Inventory" image="Paper-32" selectedImage="Paper Filled-32" id="Uh7-PT-W2b"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a6z-wG-W0M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Uhe-Pf-tvh" kind="relationship" relationship="rootViewController" id="vNM-I2-pNR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="92T-eJ-U72" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1622" y="-666"/>
+        </scene>
+        <!--Inventory-->
+        <scene sceneID="tBY-Ln-GlE">
+            <objects>
+                <tableViewController title="Inventory" id="Uhe-Pf-tvh" customClass="InventoryTableViewController" customModule="room8" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6Aa-3h-bd0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.14901960780000001" green="0.0039215686269999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="inventory" id="Ni0-7c-7Qm" customClass="InventoryTableViewCell" customModule="room8" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ni0-7c-7Qm" id="kLa-36-xal">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4p-iJ-DBn">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.0039215686269999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.94901960780000005" green="0.93333333330000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="itemName" destination="E4p-iJ-DBn" id="kX1-kV-ZNf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Uhe-Pf-tvh" id="ae6-Ws-WaG"/>
+                            <outlet property="delegate" destination="Uhe-Pf-tvh" id="MHU-mo-n9Z"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Ajk-wc-czR"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oru-wB-lJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072" y="-666"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Money Bag Filled-32" width="32" height="32"/>
+        <image name="Money Bag-32" width="32" height="32"/>
+        <image name="Paper Filled-32" width="32" height="32"/>
+        <image name="Paper-32" width="32" height="32"/>
+        <image name="Pizza-32" width="32" height="32"/>
+        <image name="Pizza-32 (1)" width="32" height="32"/>
+        <image name="To Do Filled-32" width="32" height="32"/>
+        <image name="To Do-32" width="32" height="32"/>
+    </resources>
 </document>
