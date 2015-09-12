@@ -42,10 +42,74 @@
                     <connections>
                         <outlet property="password" destination="umV-dz-egL" id="P88-go-Wpk"/>
                         <outlet property="username" destination="cJz-dH-cEN" id="15u-pW-FwX"/>
+                        <segue destination="aJX-51-6G3" kind="show" identifier="loggedIn" id="Tci-ez-AQa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="508" y="261"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nw6-bQ-liU">
+            <objects>
+                <navigationController id="aJX-51-6G3" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kla-Gp-hy7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zZ8-Hb-sth" kind="relationship" relationship="rootViewController" id="RIh-u5-bo4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmD-GT-E9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="261"/>
+        </scene>
+        <!--Apartment Table View Controller-->
+        <scene sceneID="zr0-eD-ZC1">
+            <objects>
+                <tableViewController id="zZ8-Hb-sth" customClass="ApartmentTableViewController" customModule="room8" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="22" sectionFooterHeight="22" id="irS-qB-MGX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="apartment" rowHeight="71" id="ih2-9B-WnZ" customClass="ApartmentTableViewCell" customModule="room8" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ih2-9B-WnZ" id="fiW-1B-swx">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apartment Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dV-gf-0eo">
+                                            <rect key="frame" x="8" y="8" width="136" height="42"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="9dV-gf-0eo" id="KfE-Ij-9sI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zZ8-Hb-sth" id="LOo-N7-qNT"/>
+                            <outlet property="delegate" destination="zZ8-Hb-sth" id="Zte-4K-Vv0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="yfG-r5-kar">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="tuf-T7-vd8">
+                            <connections>
+                                <action selector="add:" destination="zZ8-Hb-sth" id="aMQ-GT-4wI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8r-Jw-X2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="261"/>
         </scene>
     </scenes>
 </document>

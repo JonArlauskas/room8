@@ -25,6 +25,8 @@
 		50A1E4201BA3E96000F3A4DB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4171BA3E96000F3A4DB /* SystemConfiguration.framework */; };
 		50A1E4221BA3E96A00F3A4DB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4211BA3E96A00F3A4DB /* libsqlite3.dylib */; };
 		50A1E4241BA3ED3B00F3A4DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */; };
+		50A1E4261BA40C4F00F3A4DB /* ApartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E4251BA40C4F00F3A4DB /* ApartmentTableViewController.swift */; };
+		50A1E4281BA42B4900F3A4DB /* ApartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E4271BA42B4900F3A4DB /* ApartmentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		50A1E4171BA3E96000F3A4DB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		50A1E4211BA3E96A00F3A4DB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		50A1E4251BA40C4F00F3A4DB /* ApartmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentTableViewController.swift; sourceTree = "<group>"; };
+		50A1E4271BA42B4900F3A4DB /* ApartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 				50A1E3EB1BA3E45600F3A4DB /* AppDelegate.swift */,
 				50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */,
 				50A1E3EF1BA3E45600F3A4DB /* Main.storyboard */,
+				50A1E4251BA40C4F00F3A4DB /* ApartmentTableViewController.swift */,
+				50A1E4271BA42B4900F3A4DB /* ApartmentTableViewCell.swift */,
 				50A1E3F21BA3E45600F3A4DB /* Images.xcassets */,
 				50A1E3F41BA3E45600F3A4DB /* LaunchScreen.xib */,
 				50A1E3E91BA3E45600F3A4DB /* Supporting Files */,
@@ -261,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A1E4241BA3ED3B00F3A4DB /* LoginViewController.swift in Sources */,
+				50A1E4261BA40C4F00F3A4DB /* ApartmentTableViewController.swift in Sources */,
+				50A1E4281BA42B4900F3A4DB /* ApartmentTableViewCell.swift in Sources */,
 				50A1E3EC1BA3E45600F3A4DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

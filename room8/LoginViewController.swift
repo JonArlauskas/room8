@@ -46,9 +46,8 @@ class LoginViewController: UIViewController {
                         
                         user.signUpInBackgroundWithBlock { (succeeded, error) -> Void in
                             if error == nil {
-                                //segue
                                 println("SIGNED UP")
-                                
+                                self.performSegueWithIdentifier("loggedIn", sender: self)
                             } else {
                                 println(error)
                             }
@@ -59,8 +58,8 @@ class LoginViewController: UIViewController {
                 } else {
                     PFUser.logInWithUsernameInBackground(self.username.text, password: self.password.text) { (user, error) -> Void in
                         if error == nil {
-                         //segue
-                        println("LOGGED IN")
+                            println("LOGGED IN")
+                            self.performSegueWithIdentifier("loggedIn", sender: self)
                         } else {
                             println(error)
                         }
