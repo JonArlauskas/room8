@@ -13,6 +13,18 @@
 		50A1E3F31BA3E45600F3A4DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A1E3F21BA3E45600F3A4DB /* Images.xcassets */; };
 		50A1E3F61BA3E45600F3A4DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A1E3F41BA3E45600F3A4DB /* LaunchScreen.xib */; };
 		50A1E4021BA3E45700F3A4DB /* room8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E4011BA3E45700F3A4DB /* room8Tests.swift */; };
+		50A1E40D1BA3E8C600F3A4DB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E40B1BA3E8C600F3A4DB /* Bolts.framework */; };
+		50A1E40E1BA3E8C600F3A4DB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E40C1BA3E8C600F3A4DB /* Parse.framework */; };
+		50A1E4181BA3E96000F3A4DB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E40F1BA3E96000F3A4DB /* AudioToolbox.framework */; };
+		50A1E4191BA3E96000F3A4DB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4101BA3E96000F3A4DB /* CFNetwork.framework */; };
+		50A1E41A1BA3E96000F3A4DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4111BA3E96000F3A4DB /* CoreGraphics.framework */; };
+		50A1E41B1BA3E96000F3A4DB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4121BA3E96000F3A4DB /* CoreLocation.framework */; };
+		50A1E41C1BA3E96000F3A4DB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4131BA3E96000F3A4DB /* libz.dylib */; };
+		50A1E41D1BA3E96000F3A4DB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4141BA3E96000F3A4DB /* QuartzCore.framework */; };
+		50A1E41E1BA3E96000F3A4DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4151BA3E96000F3A4DB /* Security.framework */; };
+		50A1E41F1BA3E96000F3A4DB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4161BA3E96000F3A4DB /* StoreKit.framework */; };
+		50A1E4201BA3E96000F3A4DB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4171BA3E96000F3A4DB /* SystemConfiguration.framework */; };
+		50A1E4221BA3E96A00F3A4DB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A1E4211BA3E96A00F3A4DB /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +48,18 @@
 		50A1E3FB1BA3E45700F3A4DB /* room8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = room8Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A1E4001BA3E45700F3A4DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50A1E4011BA3E45700F3A4DB /* room8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = room8Tests.swift; sourceTree = "<group>"; };
+		50A1E40B1BA3E8C600F3A4DB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = room8/Bolts.framework; sourceTree = "<group>"; };
+		50A1E40C1BA3E8C600F3A4DB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = room8/Parse.framework; sourceTree = "<group>"; };
+		50A1E40F1BA3E96000F3A4DB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		50A1E4101BA3E96000F3A4DB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		50A1E4111BA3E96000F3A4DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		50A1E4121BA3E96000F3A4DB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		50A1E4131BA3E96000F3A4DB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		50A1E4141BA3E96000F3A4DB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		50A1E4151BA3E96000F3A4DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		50A1E4161BA3E96000F3A4DB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		50A1E4171BA3E96000F3A4DB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		50A1E4211BA3E96A00F3A4DB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +67,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A1E4221BA3E96A00F3A4DB /* libsqlite3.dylib in Frameworks */,
+				50A1E4181BA3E96000F3A4DB /* AudioToolbox.framework in Frameworks */,
+				50A1E4191BA3E96000F3A4DB /* CFNetwork.framework in Frameworks */,
+				50A1E41A1BA3E96000F3A4DB /* CoreGraphics.framework in Frameworks */,
+				50A1E41B1BA3E96000F3A4DB /* CoreLocation.framework in Frameworks */,
+				50A1E41C1BA3E96000F3A4DB /* libz.dylib in Frameworks */,
+				50A1E41D1BA3E96000F3A4DB /* QuartzCore.framework in Frameworks */,
+				50A1E41E1BA3E96000F3A4DB /* Security.framework in Frameworks */,
+				50A1E41F1BA3E96000F3A4DB /* StoreKit.framework in Frameworks */,
+				50A1E4201BA3E96000F3A4DB /* SystemConfiguration.framework in Frameworks */,
+				50A1E40E1BA3E8C600F3A4DB /* Parse.framework in Frameworks */,
+				50A1E40D1BA3E8C600F3A4DB /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +95,18 @@
 		50A1E3DD1BA3E45600F3A4DB = {
 			isa = PBXGroup;
 			children = (
+				50A1E4211BA3E96A00F3A4DB /* libsqlite3.dylib */,
+				50A1E40B1BA3E8C600F3A4DB /* Bolts.framework */,
+				50A1E40C1BA3E8C600F3A4DB /* Parse.framework */,
+				50A1E40F1BA3E96000F3A4DB /* AudioToolbox.framework */,
+				50A1E4101BA3E96000F3A4DB /* CFNetwork.framework */,
+				50A1E4111BA3E96000F3A4DB /* CoreGraphics.framework */,
+				50A1E4121BA3E96000F3A4DB /* CoreLocation.framework */,
+				50A1E4131BA3E96000F3A4DB /* libz.dylib */,
+				50A1E4141BA3E96000F3A4DB /* QuartzCore.framework */,
+				50A1E4151BA3E96000F3A4DB /* Security.framework */,
+				50A1E4161BA3E96000F3A4DB /* StoreKit.framework */,
+				50A1E4171BA3E96000F3A4DB /* SystemConfiguration.framework */,
 				50A1E3E81BA3E45600F3A4DB /* room8 */,
 				50A1E3FE1BA3E45700F3A4DB /* room8Tests */,
 				50A1E3E71BA3E45600F3A4DB /* Products */,
@@ -340,6 +388,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/room8",
+				);
 				INFOPLIST_FILE = room8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +402,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/room8",
+				);
 				INFOPLIST_FILE = room8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,6 +465,7 @@
 				50A1E4071BA3E45700F3A4DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50A1E4081BA3E45700F3A4DB /* Build configuration list for PBXNativeTarget "room8Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +474,7 @@
 				50A1E40A1BA3E45700F3A4DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
