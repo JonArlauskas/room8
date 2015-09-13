@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
                         // Initialize variables for new user
                         user.username = self.username.text!
                         user.password = self.password.text!
-                        //user["aptList"] = []
+                        user.setObject([], forKey: "aptList")
                         
                         user.signUpInBackgroundWithBlock { (succeeded, error) -> Void in
                             if error == nil {
@@ -82,18 +82,11 @@ class LoginViewController: UIViewController {
     //---------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //PFUser.logOut()
-        
     }
     
     override func viewDidAppear(animated: Bool) {
-        
         if PFUser.currentUser() != nil {
-            
             self.performSegueWithIdentifier("loggedIn", sender: self)
-            
         }
     }
     // Two functions to allow off keyboard touch to close keyboard
@@ -102,9 +95,7 @@ class LoginViewController: UIViewController {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
         textField.resignFirstResponder()
-        
         return true
     }
 

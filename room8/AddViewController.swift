@@ -33,13 +33,13 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
     @IBOutlet var labelFour: UILabel!
     
     
-    
     //---------------------------------
     // MARK: Global Variables
     //---------------------------------
     
     let pickerData = [ "Inventory", "Bills", "Food", "Tasks"]
     var currentSelection : String = "Inventory"
+    var apt : String?
 
     //---------------------------------
     // MARK: Actions
@@ -51,8 +51,8 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             
         case "Inventory":
             self.labelOne.text = "Item Name"
-            self.labelTwo.text = "Expiry Date"
-            self.labelThree.text = "Buyer"
+            self.labelTwo.text = "Buyer"
+            self.labelThree.text = "Amount"
             self.fieldFour.hidden = true
             self.labelFour.hidden = true
             currentSelection = "Inventory"
@@ -89,67 +89,76 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
     
     
     @IBAction func addAction(sender: AnyObject) {
-        
-        let query = PFQuery(className: "Apartments")
-        query.limit = 1
 
-        var obj = query.findObjects()!.first as! PFObject
-        
         switch currentSelection {
             
         case "Inventory":
-            var relation = obj.relationForKey("tasks")
-            var object = PFObject(className: "Tasks")
-            object.setObject(labelTwo.text!, forKey: "username")
-            object.setObject(labelOne.text!, forKey: "taskName")
+            var object = PFObject(className: "Inventory")
+            object.setObject(fieldOne.text!, forKey: "name")
+            object.setObject(fieldTwo.text!, forKey: "buyer")
+            object.setObject(fieldThree.text!, forKey: "amount")
+            object.saveInBackground()
+            
+            let query = PFQuery(className: "Apartments")
+            query.limit = 1
+            query.whereKey("name", equalTo: apt!)
+            var obj = query.findObjects()!.first as! PFObject
+            var relation = obj.relationForKey("inventory")
             relation.addObject(object)
+            obj.saveInBackground()
             
         case "Bills":
-            var relation = obj.relationForKey("tasks")
-            var object = PFObject(className: "Tasks")
-            object.setObject(labelTwo.text!, forKey: "username")
-            object.setObject(labelOne.text!, forKey: "taskName")
+            var object = PFObject(className: "Bills")
+            object.setObject(fieldOne.text!, forKey: "billNamed")
+            object.setObject(fieldTwo.text!, forKey: "dueDate")
+            object.setObject(fieldThree.text!, forKey: "billAmount")
+            object.setObject(fieldFour.text!, forKey: "roomatePaying")
+            object.saveInBackground()
+            
+            let query = PFQuery(className: "Apartments")
+            query.limit = 1
+            query.whereKey("name", equalTo: apt!)
+            var obj = query.findObjects()!.first as! PFObject
+            var relation = obj.relationForKey("bills")
             relation.addObject(object)
+            obj.saveInBackground()
             
         case "Food":
-            var relation = obj.relationForKey("tasks")
-            var object = PFObject(className: "Tasks")
-            object.setObject(labelTwo.text!, forKey: "username")
-            object.setObject(labelOne.text!, forKey: "taskName")
+            var object = PFObject(className: "Food")
+            object.setObject(fieldOne.text!, forKey: "foodItem")
+            object.setObject(fieldTwo.text!, forKey: "expiry")
+            object.setObject(fieldThree.text!, forKey: "amount")
+            object.saveInBackground()
+            
+            let query = PFQuery(className: "Apartments")
+            query.limit = 1
+            query.whereKey("name", equalTo: apt!)
+            var obj = query.findObjects()!.first as! PFObject
+            var relation = obj.relationForKey("food")
             relation.addObject(object)
+            obj.saveInBackground()
             
         case "Tasks":
-           
             var object = PFObject(className: "Tasks")
             object.setObject(fieldOne.text!, forKey: "taskName")
             object.setObject(fieldTwo.text!, forKey: "username")
+            object.setObject(fieldThree.text!, forKey: "deadline")
             object.saveInBackground()
             
+            
+            let query = PFQuery(className: "Apartments")
+            query.limit = 1
+            query.whereKey("name", equalTo: apt!)
+            var obj = query.findObjects()!.first as! PFObject
             var relation = obj.relationForKey("tasks")
             relation.addObject(object)
             obj.saveInBackground()
-
+            
         default:
             return
         }
     }
-    
-    
-//    func selfAssign() {
-//        
-//        let query = PFQuery(className: "Apartments")
-//        query.limit = 1
-//        query.selectKeys(["tasks"])
-//        var obj = query.findObjects()!.first as! PFObject
-//        var relation = obj.relationForKey("tasks")
-//        
-//        var object = PFObject(className: "Tasks")
-//        object.setObject(PFUser.currentUser()!.username!, forKey: "username")
-//        object.setObject(taskName.text, forKey: "taskName")
-//        
-//        relation.addObject(object)
-//  
-//    }
+
     
     //---------------------------------
     // MARK: View delegates
@@ -160,7 +169,8 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
    
         actionPicker.delegate = self
         actionPicker.dataSource = self
-        
+        self.view.backgroundColor = UIColor(red: 38/255, green: 1/255, blue: 38/255, alpha: 1.0)
+        self.actionPicker.tintColor = UIColor(red: 242/255, green: 238/255, blue: 179/255, alpha: 1.0)
         loadLabels("Inventory")
         
     }
@@ -193,6 +203,23 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         loadLabels(pickerData[row])
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        var attributedString: NSAttributedString!
+        
+        switch component {
+        case 0:
+            attributedString = NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName : UIColor(red: 242/255, green: 238/255, blue: 179/255, alpha: 1.0)])
+        case 1:
+            attributedString = NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName : UIColor(red: 242/255, green: 238/255, blue: 179/255, alpha: 1.0)])
+        case 2:
+            attributedString = NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName : UIColor(red: 242/255, green: 238/255, blue: 179/255, alpha: 1.0)])
+        default:
+            attributedString = nil
+        }
+        
+        return attributedString
     }
 
     

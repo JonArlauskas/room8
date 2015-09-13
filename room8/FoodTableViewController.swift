@@ -7,17 +7,50 @@
 //
 
 import UIKit
+import Parse
 
 class FoodTableViewController: UITableViewController {
+    
+    //---------------------------------
+    // MARK: Global Variables
+    //---------------------------------
+
+    var apt : String?
+    var food : Food?
+    var foodList : [Food] = []
+    
+    //---------------------------------
+    // MARK: Data source
+    //---------------------------------
+    
+    func foodQuery() {
+        let foodQ = PFQuery(className: "Apartments")
+        foodQ.whereKey("name", equalTo: apt!)
+        let obj = foodQ.findObjects()!.first as! PFObject
+        
+        let foods = obj.objectForKey("food") as! PFRelation
+        let relationF = foods.query()!
+        
+        let fList = relationF.findObjects() as! [PFObject]
+        
+        for f in fList {
+            
+            food = Food()
+            food!.foodItem = f.objectForKey("foodItem") as! String
+            food!.amount = f.objectForKey("amount") as! String
+            food!.expiry = f.objectForKey("expiry") as! String
+            
+            self.foodList.append(food!)
+        }
+    }
+
+    //---------------------------------
+    // MARK: View functions
+    //---------------------------------
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = true
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableView.backgroundColor = UIColor(red: 38/255, green: 1/255, blue: 38/255, alpha: 1.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,39 +58,39 @@ class FoodTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
+    //---------------------------------
+    // MARK: Table view delegates
+    //---------------------------------
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        return foodList.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let tableCell = self.tableView.dequeueReusableCellWithIdentifier("food") as! FoodTableViewCell
 
-        // Configure the cell...
+        
+        var nameIndex = foodList[indexPath.row]
+        tableCell.foodName.text = nameIndex.foodItem
 
-        return cell
+        return tableCell
     }
-    */
+    
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -67,7 +100,7 @@ class FoodTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+
 
     /*
     // Override to support rearranging the table view.

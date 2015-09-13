@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class Inventory: NSObject {
+
+    var item : String = ""
+    var amount : String = ""
+    var buyer : String = ""
+
+}

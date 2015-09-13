@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class Food : NSObject {
+    
+    var foodItem : String = ""
+    var amount : String = ""
+    var expiry : String = ""
+  
+}

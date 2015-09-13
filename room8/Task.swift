@@ -7,13 +7,11 @@
 //
 
 import Foundation
-import Parse
-import UIKit
-
 
 class Task: NSObject {
     
     var job : String = ""
     var responsible : String = ""
+    var deadline : String = ""
   
 }
