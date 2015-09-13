@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
                         // Initialize variables for new user
                         user.username = self.username.text!
                         user.password = self.password.text!
-                        //user["aptList"] = []
+                        user.setObject([], forKey: "aptList")
                         
                         user.signUpInBackgroundWithBlock { (succeeded, error) -> Void in
                             if error == nil {

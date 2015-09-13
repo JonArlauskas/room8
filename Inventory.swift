@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import Parse
+import UIKit
+
+
+class Inventory: NSObject {
+
+    var item : String = ""
+    var amount : String = ""
+    var buyer : String = ""
+
+}

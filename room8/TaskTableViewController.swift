@@ -19,22 +19,10 @@ class TaskTableViewController: UITableViewController {
     var taskList : [Task] = []
 
     //---------------------------------
-    // MARK: Actions
+    // MARK: Data Source
     //---------------------------------
 
     func taskQuery() {
-        
-//        let queryUser = PFUser.query()
-//        queryUser?.limit = 1
-//        queryUser?.whereKey("username", equalTo: PFUser.currentUser()!.username!)
-//        let obj = queryUser!.findObjects()?.first as! PFObject
-//        
-//        let tempNames = obj.objectForKey("aptList") as! [String]
-//        for names in tempNames {
-//            aptNames.append(names)
-//        }
-        
-        
         let taskQ = PFQuery(className: "Apartments")
         taskQ.whereKey("name", equalTo: apt!)
         let obj = taskQ.findObjects()!.first as! PFObject
@@ -46,12 +34,12 @@ class TaskTableViewController: UITableViewController {
         
         for t in tList {
             
-            let task = Task()
-            task.job = t.objectForKey("taskName") as! String
-            task.responsible = t.objectForKey("username") as! String
-            task.deadline = t.objectForKey("deadline") as! String
+            task = Task()
+            task!.job = t.objectForKey("taskName") as! String
+            task!.responsible = t.objectForKey("username") as! String
+            task!.deadline = t.objectForKey("deadline") as! String
             
-            self.taskList.append(task)
+            self.taskList.append(task!)
         } 
     }
     
@@ -60,15 +48,8 @@ class TaskTableViewController: UITableViewController {
     //---------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.contentInset = UIEdgeInsetsMake(44,0,0,0);
-        self.navigationController?.navigationBarHidden = true
+        //self.tableView.contentInset = UIEdgeInsetsMake(44,0,0,0);
         taskQuery()
-        dump(taskList)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     //---------------------------------
@@ -76,20 +57,15 @@ class TaskTableViewController: UITableViewController {
     //---------------------------------
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
         return taskList.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // Cell reuse idenifier
         let tableCell = self.tableView.dequeueReusableCellWithIdentifier("tasks") as! TaskTableViewCell
         
         var nameIndex = taskList[indexPath.row]
@@ -98,16 +74,12 @@ class TaskTableViewController: UITableViewController {
         return tableCell
     }
 
-
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
-
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -117,7 +89,7 @@ class TaskTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

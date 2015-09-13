@@ -51,8 +51,8 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             
         case "Inventory":
             self.labelOne.text = "Item Name"
-            self.labelTwo.text = "Expiry Date"
-            self.labelThree.text = "Buyer"
+            self.labelTwo.text = "Buyer"
+            self.labelThree.text = "Amount"
             self.fieldFour.hidden = true
             self.labelFour.hidden = true
             currentSelection = "Inventory"
@@ -93,28 +93,53 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
         switch currentSelection {
             
         case "Inventory":
-            //var relation = obj.relationForKey("tasks")
-            var object = PFObject(className: "Tasks")
-            object.setObject(labelTwo.text!, forKey: "username")
-            object.setObject(labelOne.text!, forKey: "taskName")
-            //relation.addObject(object)
+            var object = PFObject(className: "Inventory")
+            object.setObject(labelOne.text!, forKey: "name")
+            object.setObject(labelTwo.text!, forKey: "buyer")
+            object.setObject(labelThree.text!, forKey: "amount")
+            object.saveInBackground()
+            
+            let query = PFQuery(className: "Apartments")
+            query.limit = 1
+            query.whereKey("name", equalTo: apt!)
+            var obj = query.findObjects()!.first as! PFObject
+            var relation = obj.relationForKey("inventory")
+            relation.addObject(object)
+            obj.saveInBackground()
+            
             
         case "Bills":
-            //var relation = obj.relationForKey("tasks")
-            var object = PFObject(className: "Tasks")
-            object.setObject(labelTwo.text!, forKey: "username")
-            object.setObject(labelOne.text!, forKey: "taskName")
-            //relation.addObject(object)
+            var object = PFObject(className: "Bills")
+            object.setObject(labelOne.text!, forKey: "billNamed")
+            object.setObject(labelTwo.text!, forKey: "dueDate")
+            object.setObject(labelThree.text!, forKey: "billAmount")
+            object.setObject(labelFour.text!, forKey: "roomatePaying")
+            object.saveInBackground()
+            
+            let query = PFQuery(className: "Apartments")
+            query.limit = 1
+            query.whereKey("name", equalTo: apt!)
+            var obj = query.findObjects()!.first as! PFObject
+            var relation = obj.relationForKey("bills")
+            relation.addObject(object)
+            obj.saveInBackground()
             
         case "Food":
-            //var relation = obj.relationForKey("tasks")
-            var object = PFObject(className: "Tasks")
-            object.setObject(labelTwo.text!, forKey: "username")
-            object.setObject(labelOne.text!, forKey: "taskName")
-            //relation.addObject(object)
+            var object = PFObject(className: "Food")
+            object.setObject(labelOne.text!, forKey: "foodItem")
+            object.setObject(labelTwo.text!, forKey: "expiry")
+            object.setObject(labelThree.text!, forKey: "amount")
+            object.saveInBackground()
+            
+            let query = PFQuery(className: "Apartments")
+            query.limit = 1
+            query.whereKey("name", equalTo: apt!)
+            var obj = query.findObjects()!.first as! PFObject
+            var relation = obj.relationForKey("food")
+            relation.addObject(object)
+            obj.saveInBackground()
             
         case "Tasks":
-            
             var object = PFObject(className: "Tasks")
             object.setObject(fieldOne.text!, forKey: "taskName")
             object.setObject(fieldTwo.text!, forKey: "username")
@@ -124,6 +149,7 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             
             let query = PFQuery(className: "Apartments")
             query.limit = 1
+            query.whereKey("name", equalTo: apt!)
             var obj = query.findObjects()!.first as! PFObject
             var relation = obj.relationForKey("tasks")
             relation.addObject(object)

@@ -7,62 +7,93 @@
 //
 
 import UIKit
+import Parse
 
 class InventoryTableViewController: UITableViewController {
 
+    //---------------------------------
+    // MARK: Global Variables
+    //---------------------------------
+    
     var apt : String?
+    var inventory : Inventory?
+    var itemList : [Inventory] = []
+
+    
+    //---------------------------------
+    // MARK: Data Source
+    //---------------------------------
+    
+    func itemQuery() {
+        
+        let itemQ = PFQuery(className: "Apartments")
+        itemQ.whereKey("name", equalTo: apt!)
+        let obj = itemQ.findObjects()!.first as! PFObject
+        
+        let items = obj.objectForKey("inventory") as! PFRelation
+        let relationI = items.query()!
+        
+        let iList = relationI.findObjects() as! [PFObject]
+        
+        for i in iList {
+            
+            inventory = Inventory()
+            inventory?.buyer = i.objectForKey("buyer") as! String
+            inventory?.item = i.objectForKey("name") as! String
+            inventory?.amount = i.objectForKey("amount") as! String
+            
+            self.itemList.append(inventory!)
+        }
+        
+    }
     
     
-    
+    //---------------------------------
+    // MARK: View functions
+    //---------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = true
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        itemQuery()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
+    
+    
+    //---------------------------------
+    // MARK: Table view data sources
+    //---------------------------------
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return itemList.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        
+        let tableCell = self.tableView.dequeueReusableCellWithIdentifier("inventory") as! InventoryTableViewCell
+        
+        var nameIndex = itemList[indexPath.row]
+        tableCell.itemName.text = nameIndex.item
 
-        // Configure the cell...
-
-        return cell
+        return tableCell
     }
-    */
+    
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -72,7 +103,7 @@ class InventoryTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
