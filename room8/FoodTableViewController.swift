@@ -10,6 +10,8 @@ import UIKit
 
 class FoodTableViewController: UITableViewController {
 
+    var apt : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true

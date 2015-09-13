@@ -15,5 +15,6 @@ class Task: NSObject {
     
     var job : String = ""
     var responsible : String = ""
+    var deadline : String = ""
   
 }

@@ -7,32 +7,63 @@
 //
 
 import UIKit
+import Parse
 
 class TaskTableViewController: UITableViewController {
 
     //---------------------------------
     // MARK: Global Variables
     //---------------------------------
+    var apt : String?
     var task : Task?
     var taskList : [Task] = []
-    
-    
-    
+
     //---------------------------------
     // MARK: Actions
     //---------------------------------
-    
-    @IBAction func addTask(sender: AnyObject) {
+
+    func taskQuery() {
+        
+//        let queryUser = PFUser.query()
+//        queryUser?.limit = 1
+//        queryUser?.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+//        let obj = queryUser!.findObjects()?.first as! PFObject
+//        
+//        let tempNames = obj.objectForKey("aptList") as! [String]
+//        for names in tempNames {
+//            aptNames.append(names)
+//        }
+        
+        
+        let taskQ = PFQuery(className: "Apartments")
+        taskQ.whereKey("name", equalTo: apt!)
+        let obj = taskQ.findObjects()!.first as! PFObject
+        
+        let tasks = obj.objectForKey("tasks") as! PFRelation
+        let relationQ = tasks.query()!
+        
+        let tList = relationQ.findObjects() as! [PFObject]
+        
+        for t in tList {
+            
+            let task = Task()
+            task.job = t.objectForKey("taskName") as! String
+            task.responsible = t.objectForKey("username") as! String
+            task.deadline = t.objectForKey("deadline") as! String
+            
+            self.taskList.append(task)
+        } 
     }
-    
-    
     
     //---------------------------------
     // MARK: View Functions
     //---------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.contentInset = UIEdgeInsetsMake(44,0,0,0);
         self.navigationController?.navigationBarHidden = true
+        taskQuery()
+        dump(taskList)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -59,7 +90,10 @@ class TaskTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Cell reuse idenifier
-        let tableCell = self.tableView.dequeueReusableCellWithIdentifier("tasks") as! ApartmentTableViewCell
+        let tableCell = self.tableView.dequeueReusableCellWithIdentifier("tasks") as! TaskTableViewCell
+        
+        var nameIndex = taskList[indexPath.row]
+        tableCell.taskName.text = nameIndex.job
 
         return tableCell
     }

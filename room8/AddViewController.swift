@@ -33,13 +33,13 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
     @IBOutlet var labelFour: UILabel!
     
     
-    
     //---------------------------------
     // MARK: Global Variables
     //---------------------------------
     
     let pickerData = [ "Inventory", "Bills", "Food", "Tasks"]
     var currentSelection : String = "Inventory"
+    var apt : String?
 
     //---------------------------------
     // MARK: Actions
@@ -89,67 +89,52 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
     
     
     @IBAction func addAction(sender: AnyObject) {
-        
-        let query = PFQuery(className: "Apartments")
-        query.limit = 1
 
-        var obj = query.findObjects()!.first as! PFObject
-        
         switch currentSelection {
             
         case "Inventory":
-            var relation = obj.relationForKey("tasks")
+            //var relation = obj.relationForKey("tasks")
             var object = PFObject(className: "Tasks")
             object.setObject(labelTwo.text!, forKey: "username")
             object.setObject(labelOne.text!, forKey: "taskName")
-            relation.addObject(object)
+            //relation.addObject(object)
             
         case "Bills":
-            var relation = obj.relationForKey("tasks")
+            //var relation = obj.relationForKey("tasks")
             var object = PFObject(className: "Tasks")
             object.setObject(labelTwo.text!, forKey: "username")
             object.setObject(labelOne.text!, forKey: "taskName")
-            relation.addObject(object)
+            //relation.addObject(object)
             
         case "Food":
-            var relation = obj.relationForKey("tasks")
+            //var relation = obj.relationForKey("tasks")
             var object = PFObject(className: "Tasks")
             object.setObject(labelTwo.text!, forKey: "username")
             object.setObject(labelOne.text!, forKey: "taskName")
-            relation.addObject(object)
+            //relation.addObject(object)
             
         case "Tasks":
-           
+            
             var object = PFObject(className: "Tasks")
             object.setObject(fieldOne.text!, forKey: "taskName")
             object.setObject(fieldTwo.text!, forKey: "username")
+            object.setObject(fieldThree.text!, forKey: "deadline")
             object.saveInBackground()
             
+            
+            let query = PFQuery(className: "Apartments")
+            query.limit = 1
+            var obj = query.findObjects()!.first as! PFObject
             var relation = obj.relationForKey("tasks")
             relation.addObject(object)
             obj.saveInBackground()
+            
 
         default:
             return
         }
     }
-    
-    
-//    func selfAssign() {
-//        
-//        let query = PFQuery(className: "Apartments")
-//        query.limit = 1
-//        query.selectKeys(["tasks"])
-//        var obj = query.findObjects()!.first as! PFObject
-//        var relation = obj.relationForKey("tasks")
-//        
-//        var object = PFObject(className: "Tasks")
-//        object.setObject(PFUser.currentUser()!.username!, forKey: "username")
-//        object.setObject(taskName.text, forKey: "taskName")
-//        
-//        relation.addObject(object)
-//  
-//    }
+
     
     //---------------------------------
     // MARK: View delegates

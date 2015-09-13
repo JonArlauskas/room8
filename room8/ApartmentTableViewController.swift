@@ -16,7 +16,6 @@ class ApartmentTableViewController: UITableViewController {
     //---------------------------------
     var aptNames : [String] = []
 
-
     //---------------------------------
     // MARK: Actions
     //---------------------------------
@@ -141,11 +140,25 @@ class ApartmentTableViewController: UITableViewController {
         if segue.identifier == "toTabs" {
             
             let tabBar = segue.destinationViewController as! UITabBarController
-            let nav = tabBar.viewControllers!.first as! UINavigationController
-            let moveVC = nav.topViewController as! InventoryTableViewController
+            let nav0 = tabBar.viewControllers!.first as! UINavigationController
+            let nav1 = tabBar.viewControllers![1] as! UINavigationController
+            let nav2 = tabBar.viewControllers![2] as! UINavigationController
+            let nav3 = tabBar.viewControllers![3] as! UINavigationController
+            let nav4 = tabBar.viewControllers![4] as! UINavigationController
+
+            
+            let moveVC0 = nav0.topViewController as! InventoryTableViewController
+            let moveVC1 = nav1.topViewController as! BillTableViewController
+            let moveVC2 = nav2.topViewController as! FoodTableViewController
+            let moveVC3 = nav3.topViewController as! TaskTableViewController
+            let moveVC4 = nav4.topViewController as! AddViewController
             
             if let selectedPath = tableView.indexPathForCell(sender as! UITableViewCell) {
-                moveVC.apt = aptNames[selectedPath.row]
+                moveVC0.apt = aptNames[selectedPath.row]
+                moveVC1.apt = aptNames[selectedPath.row]
+                moveVC2.apt = aptNames[selectedPath.row]
+                moveVC3.apt = aptNames[selectedPath.row]
+                moveVC4.apt = aptNames[selectedPath.row]
             }
         }
     }
