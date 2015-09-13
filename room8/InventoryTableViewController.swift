@@ -16,8 +16,8 @@ class InventoryTableViewController: UITableViewController {
     //---------------------------------
     
     var apt : String?
-    var inventory : Inventory?
-    var itemList : [Inventory] = []
+    private var inventory : Inventory?
+    private var itemList : [Inventory] = []
 
     
     //---------------------------------
@@ -54,6 +54,7 @@ class InventoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         itemQuery()
+        self.tableView.backgroundColor = UIColor(red: 38/255, green: 1/255, blue: 38/255, alpha: 1.0)
     }
     
     

@@ -94,9 +94,9 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             
         case "Inventory":
             var object = PFObject(className: "Inventory")
-            object.setObject(labelOne.text!, forKey: "name")
-            object.setObject(labelTwo.text!, forKey: "buyer")
-            object.setObject(labelThree.text!, forKey: "amount")
+            object.setObject(fieldOne.text!, forKey: "name")
+            object.setObject(fieldTwo.text!, forKey: "buyer")
+            object.setObject(fieldThree.text!, forKey: "amount")
             object.saveInBackground()
             
             let query = PFQuery(className: "Apartments")
@@ -107,13 +107,12 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             relation.addObject(object)
             obj.saveInBackground()
             
-            
         case "Bills":
             var object = PFObject(className: "Bills")
-            object.setObject(labelOne.text!, forKey: "billNamed")
-            object.setObject(labelTwo.text!, forKey: "dueDate")
-            object.setObject(labelThree.text!, forKey: "billAmount")
-            object.setObject(labelFour.text!, forKey: "roomatePaying")
+            object.setObject(fieldOne.text!, forKey: "billNamed")
+            object.setObject(fieldTwo.text!, forKey: "dueDate")
+            object.setObject(fieldThree.text!, forKey: "billAmount")
+            object.setObject(fieldFour.text!, forKey: "roomatePaying")
             object.saveInBackground()
             
             let query = PFQuery(className: "Apartments")
@@ -126,9 +125,9 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             
         case "Food":
             var object = PFObject(className: "Food")
-            object.setObject(labelOne.text!, forKey: "foodItem")
-            object.setObject(labelTwo.text!, forKey: "expiry")
-            object.setObject(labelThree.text!, forKey: "amount")
+            object.setObject(fieldOne.text!, forKey: "foodItem")
+            object.setObject(fieldTwo.text!, forKey: "expiry")
+            object.setObject(fieldThree.text!, forKey: "amount")
             object.saveInBackground()
             
             let query = PFQuery(className: "Apartments")
@@ -155,7 +154,6 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
             relation.addObject(object)
             obj.saveInBackground()
             
-
         default:
             return
         }
@@ -171,7 +169,8 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
    
         actionPicker.delegate = self
         actionPicker.dataSource = self
-        
+        self.view.backgroundColor = UIColor(red: 38/255, green: 1/255, blue: 38/255, alpha: 1.0)
+        self.actionPicker.tintColor = UIColor(red: 242/255, green: 238/255, blue: 179/255, alpha: 1.0)
         loadLabels("Inventory")
         
     }
@@ -204,6 +203,23 @@ class AddViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDel
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         loadLabels(pickerData[row])
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        var attributedString: NSAttributedString!
+        
+        switch component {
+        case 0:
+            attributedString = NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName : UIColor(red: 242/255, green: 238/255, blue: 179/255, alpha: 1.0)])
+        case 1:
+            attributedString = NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName : UIColor(red: 242/255, green: 238/255, blue: 179/255, alpha: 1.0)])
+        case 2:
+            attributedString = NSAttributedString(string: pickerData[row], attributes: [NSForegroundColorAttributeName : UIColor(red: 242/255, green: 238/255, blue: 179/255, alpha: 1.0)])
+        default:
+            attributedString = nil
+        }
+        
+        return attributedString
     }
 
     

@@ -48,7 +48,7 @@ class TaskTableViewController: UITableViewController {
     //---------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.contentInset = UIEdgeInsetsMake(44,0,0,0);
+        self.tableView.backgroundColor = UIColor(red: 38/255, green: 1/255, blue: 38/255, alpha: 1.0)
         taskQuery()
     }
 

@@ -30,6 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Track statistics around application opens
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
+        // Default Color Settings
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        UINavigationBar.appearance().barTintColor = UIColor.blackColor()
+        UITabBar.appearance().backgroundColor = UIColor.blackColor()
+        UITabBar.appearance().barTintColor = UIColor.blackColor()
+        UITabBar.appearance().tintColor = UIColor(red: 242/255, green: 238/255, blue: 179/255, alpha: 1.0)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 242/255, green: 238/255, blue: 179/255, alpha: 1.0)], forState:.Selected)
+
         return true
     }
 

@@ -102,7 +102,7 @@ class ApartmentTableViewController: UITableViewController {
     //---------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.backgroundColor = UIColor(red: 38/255, green: 1/255, blue: 38/255, alpha: 1.0)
         aptQuery()
     }
 
@@ -110,6 +110,7 @@ class ApartmentTableViewController: UITableViewController {
         super.viewDidAppear(true)
         
         timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("checkForInvite"), userInfo: nil, repeats: true)
+        self.tableView.reloadData()
     }
     
     //---------------------------------
@@ -141,7 +142,6 @@ class ApartmentTableViewController: UITableViewController {
                                 
                                 // Add apartment object to the apartments class, with relations
                                 let aptAdd = PFObject(className: "Apartments")
-                                
                                 let residents = aptAdd.relationForKey("residents")
                                 residents.addObject(PFUser.currentUser()!)
                                 aptAdd.relationForKey("inventory")
@@ -149,7 +149,6 @@ class ApartmentTableViewController: UITableViewController {
                                 aptAdd.relationForKey("tasks")
                                 aptAdd.relationForKey("food")
                                 aptAdd.setObject(apartment, forKey: "name")
-                                
                                 
                                 // Set the read and write permissions
                                 let aptACL = PFACL(user: PFUser.currentUser()!)
@@ -161,16 +160,14 @@ class ApartmentTableViewController: UITableViewController {
                                 // Remove the invitation
                                 objects!.first?.deleteInBackground()
                                 
+                                
                             } else {
                                 println(error)
                             }
                         }
-                        
                     }))
-                    
                     alert.addAction(UIAlertAction(title: "Decline", style: .Destructive, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
-                    
                 } else {
                     self.timer.invalidate()
                 }

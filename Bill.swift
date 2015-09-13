@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class Bill : NSObject {
+    
+    var billName : String = ""
+    var billAmount : String = ""
+    var roomatePaying : String = ""
+    var dueDate : String = ""
+    
+    
+}

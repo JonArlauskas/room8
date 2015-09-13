@@ -7,9 +7,6 @@
 //
 
 import Foundation
-import Parse
-import UIKit
-
 
 class Task: NSObject {
     

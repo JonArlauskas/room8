@@ -7,20 +7,55 @@
 //
 
 import UIKit
+import Parse
 
 class BillTableViewController: UITableViewController {
 
+    //---------------------------------
+    // MARK: Global Variables
+    //---------------------------------
+
     var apt : String?
+    var bill : Bill?
+    var billList : [Bill] = []
+    
+    //---------------------------------
+    // MARK: Data Source
+    //---------------------------------
+    
+    func billQuery() {
+        
+        let billQuery = PFQuery(className: "Bills")
+        billQuery.whereKey("name", equalTo: apt!)
+        let obj = billQuery.findObjects()!.first as! PFObject
+        
+        let bills = obj.objectForKey("bills") as! PFRelation
+        let relationBill = bills.query()!
+        
+        let bList = relationBill.findObjects() as! [PFObject]
+        
+        for b in  bList {
+            
+            bill = Bill()
+            bill!.billName = b.objectForKey("billNamed") as! String
+            bill!.billAmount = b.objectForKey("billAmount") as! String
+            bill!.roomatePaying = b.objectForKey("roomatePaying") as! String
+            bill!.dueDate = b.objectForKey("dueDate") as! String
+            
+            self.billList.append(bill!)
+        }
+    }
     
     
+    //---------------------------------
+    // MARK: View functions
+    //---------------------------------
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-          self.navigationController?.navigationBarHidden = true
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableView.backgroundColor = UIColor(red: 38/255, green: 1/255, blue: 38/255, alpha: 1.0)
+        billQuery()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,39 +63,38 @@ class BillTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+    //---------------------------------
+    // MARK: Table View data source
+    //---------------------------------
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        return billList.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let tableCell = self.tableView.dequeueReusableCellWithIdentifier("bills") as! BillTableViewCell
+        
+        var nameIndex = billList[indexPath.row]
+        tableCell.billName.text = nameIndex.billName
 
-        // Configure the cell...
-
-        return cell
+        return tableCell
     }
-    */
+    
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -70,7 +104,7 @@ class BillTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
