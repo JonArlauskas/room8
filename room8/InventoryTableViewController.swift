@@ -28,21 +28,24 @@ class InventoryTableViewController: UITableViewController {
         
         let itemQ = PFQuery(className: "Apartments")
         itemQ.whereKey("name", equalTo: apt!)
-        let obj = itemQ.findObjects()!.first as! PFObject
+        let obj = itemQ.findObjects()!.first as? PFObject
         
-        let items = obj.objectForKey("inventory") as! PFRelation
-        let relationI = items.query()!
+        if obj != nil {
         
-        let iList = relationI.findObjects() as! [PFObject]
-        
-        for i in iList {
+            let items = obj!.objectForKey("inventory") as! PFRelation
+            let relationI = items.query()!
             
-            inventory = Inventory()
-            inventory?.buyer = i.objectForKey("buyer") as! String
-            inventory?.item = i.objectForKey("name") as! String
-            inventory?.amount = i.objectForKey("amount") as! String
+            let iList = relationI.findObjects() as! [PFObject]
             
-            self.itemList.append(inventory!)
+            for i in iList {
+                
+                inventory = Inventory()
+                inventory?.buyer = i.objectForKey("buyer") as! String
+                inventory?.item = i.objectForKey("name") as! String
+                inventory?.amount = i.objectForKey("amount") as! String
+                
+                self.itemList.append(inventory!)
+            }
         }
         
     }

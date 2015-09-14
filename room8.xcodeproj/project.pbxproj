@@ -27,6 +27,7 @@
 		50A1E4241BA3ED3B00F3A4DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */; };
 		50A1E4261BA40C4F00F3A4DB /* ApartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E4251BA40C4F00F3A4DB /* ApartmentTableViewController.swift */; };
 		50A1E4281BA42B4900F3A4DB /* ApartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A1E4271BA42B4900F3A4DB /* ApartmentTableViewCell.swift */; };
+		50C0A0C11BA7270B00153D9F /* FoodDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C0A0C01BA7270B00153D9F /* FoodDetail.swift */; };
 		50F6CBDE1BA49847007018F5 /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBDD1BA49847007018F5 /* InventoryTableViewCell.swift */; };
 		50F6CBE01BA49854007018F5 /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBDF1BA49854007018F5 /* BillTableViewCell.swift */; };
 		50F6CBE21BA4985E007018F5 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6CBE11BA4985E007018F5 /* FoodTableViewCell.swift */; };
@@ -77,6 +78,7 @@
 		50A1E4231BA3ED3B00F3A4DB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50A1E4251BA40C4F00F3A4DB /* ApartmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentTableViewController.swift; sourceTree = "<group>"; };
 		50A1E4271BA42B4900F3A4DB /* ApartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentTableViewCell.swift; sourceTree = "<group>"; };
+		50C0A0C01BA7270B00153D9F /* FoodDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetail.swift; sourceTree = "<group>"; };
 		50F6CBDD1BA49847007018F5 /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
 		50F6CBDF1BA49854007018F5 /* BillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
 		50F6CBE11BA4985E007018F5 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
@@ -145,11 +147,11 @@
 			children = (
 				50A1E3EF1BA3E45600F3A4DB /* Main.storyboard */,
 				50A1E3F41BA3E45600F3A4DB /* LaunchScreen.xib */,
+				50A1E3EB1BA3E45600F3A4DB /* AppDelegate.swift */,
 				50F6CBDC1BA4981C007018F5 /* Views */,
 				50F6CBDA1BA497FB007018F5 /* Models */,
 				50F6CBD91BA497F5007018F5 /* Controllers */,
 				50F6CBD71BA497DB007018F5 /* Cells */,
-				50A1E3EB1BA3E45600F3A4DB /* AppDelegate.swift */,
 				50F6CBFB1BA4C869007018F5 /* Frameworks */,
 				50A1E3E91BA3E45600F3A4DB /* Supporting Files */,
 			);
@@ -222,6 +224,7 @@
 		50F6CBDC1BA4981C007018F5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				50C0A0C01BA7270B00153D9F /* FoodDetail.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				50F6CBE01BA49854007018F5 /* BillTableViewCell.swift in Sources */,
 				50F6CBF21BA4C81C007018F5 /* Task.swift in Sources */,
 				50F6CBF01BA4A823007018F5 /* TaskTableViewCell.swift in Sources */,
+				50C0A0C11BA7270B00153D9F /* FoodDetail.swift in Sources */,
 				50F6CBE81BA498E9007018F5 /* FoodTableViewController.swift in Sources */,
 				50F6CBF81BA4C842007018F5 /* Food.swift in Sources */,
 				50F6CBE61BA498E2007018F5 /* BillTableViewController.swift in Sources */,

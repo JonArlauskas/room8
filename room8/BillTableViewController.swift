@@ -27,22 +27,24 @@ class BillTableViewController: UITableViewController {
         
         let billQuery = PFQuery(className: "Bills")
         billQuery.whereKey("name", equalTo: apt!)
-        let obj = billQuery.findObjects()!.first as! PFObject
+        let obj = billQuery.findObjects()!.first as? PFObject
         
-        let bills = obj.objectForKey("bills") as! PFRelation
-        let relationBill = bills.query()!
-        
-        let bList = relationBill.findObjects() as! [PFObject]
-        
-        for b in  bList {
+        if obj != nil {
+            let bills = obj!.objectForKey("bills") as! PFRelation
+            let relationBill = bills.query()!
             
-            bill = Bill()
-            bill!.billName = b.objectForKey("billNamed") as! String
-            bill!.billAmount = b.objectForKey("billAmount") as! String
-            bill!.roomatePaying = b.objectForKey("roomatePaying") as! String
-            bill!.dueDate = b.objectForKey("dueDate") as! String
+            let bList = relationBill.findObjects() as! [PFObject]
             
-            self.billList.append(bill!)
+            for b in  bList {
+                
+                bill = Bill()
+                bill!.billName = b.objectForKey("billNamed") as! String
+                bill!.billAmount = b.objectForKey("billAmount") as! String
+                bill!.roomatePaying = b.objectForKey("roomatePaying") as! String
+                bill!.dueDate = b.objectForKey("dueDate") as! String
+                
+                self.billList.append(bill!)
+            }
         }
     }
     

@@ -26,21 +26,23 @@ class FoodTableViewController: UITableViewController {
     func foodQuery() {
         let foodQ = PFQuery(className: "Apartments")
         foodQ.whereKey("name", equalTo: apt!)
-        let obj = foodQ.findObjects()!.first as! PFObject
+        let obj = foodQ.findObjects()!.first as? PFObject
         
-        let foods = obj.objectForKey("food") as! PFRelation
-        let relationF = foods.query()!
-        
-        let fList = relationF.findObjects() as! [PFObject]
-        
-        for f in fList {
+        if obj != nil {
+            let foods = obj!.objectForKey("food") as! PFRelation
+            let relationF = foods.query()!
             
-            food = Food()
-            food!.foodItem = f.objectForKey("foodItem") as! String
-            food!.amount = f.objectForKey("amount") as! String
-            food!.expiry = f.objectForKey("expiry") as! String
+            let fList = relationF.findObjects() as! [PFObject]
             
-            self.foodList.append(food!)
+            for f in fList {
+                
+                food = Food()
+                food!.foodItem = f.objectForKey("foodItem") as! String
+                food!.amount = f.objectForKey("amount") as! String
+                food!.expiry = f.objectForKey("expiry") as! String
+                
+                self.foodList.append(food!)
+            }
         }
     }
 

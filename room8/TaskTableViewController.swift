@@ -25,22 +25,24 @@ class TaskTableViewController: UITableViewController {
     func taskQuery() {
         let taskQ = PFQuery(className: "Apartments")
         taskQ.whereKey("name", equalTo: apt!)
-        let obj = taskQ.findObjects()!.first as! PFObject
+        let obj = taskQ.findObjects()!.first as? PFObject
         
-        let tasks = obj.objectForKey("tasks") as! PFRelation
-        let relationQ = tasks.query()!
-        
-        let tList = relationQ.findObjects() as! [PFObject]
-        
-        for t in tList {
+        if obj != nil {
+            let tasks = obj!.objectForKey("tasks") as! PFRelation
+            let relationQ = tasks.query()!
             
-            task = Task()
-            task!.job = t.objectForKey("taskName") as! String
-            task!.responsible = t.objectForKey("username") as! String
-            task!.deadline = t.objectForKey("deadline") as! String
+            let tList = relationQ.findObjects() as! [PFObject]
             
-            self.taskList.append(task!)
-        } 
+            for t in tList {
+                
+                task = Task()
+                task!.job = t.objectForKey("taskName") as! String
+                task!.responsible = t.objectForKey("username") as! String
+                task!.deadline = t.objectForKey("deadline") as! String
+                
+                self.taskList.append(task!)
+            }
+        }
     }
     
     //---------------------------------
